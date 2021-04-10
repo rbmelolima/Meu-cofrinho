@@ -14,7 +14,12 @@ class AppTheme {
       errorColor: ColorAppTheme.errorColor,
       backgroundColor: ColorAppTheme.backgroundColor,
       buttonColor: ColorAppTheme.buttonColor,
-      appBarTheme: AppBarTheme(color: ColorAppTheme.primaryColor),
+      appBarTheme: AppBarTheme(
+        color: ColorAppTheme.backgroundColor,
+        foregroundColor: Colors.white,
+        actionsIconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
       scaffoldBackgroundColor: ColorAppTheme.backgroundColor,
       fontFamily: 'Roboto',
       visualDensity: VisualDensity.adaptivePlatformDensity,

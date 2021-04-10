@@ -1,7 +1,7 @@
 name: meu_cofrinho
 description: Gerenciador de cofrinho pessoal
 
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   get:
+  lottie: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -25,6 +26,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/ui/assets
- 
- 
+    - lib/ui/assets/images/
+    - lib/ui/assets/lottie/
