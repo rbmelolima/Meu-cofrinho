@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:meu_cofrinho/ui/theme/theme.dart';
-import 'package:meu_cofrinho/ui/widgets/widgets.dart';
 
 class FeatureCard extends StatelessWidget {
   final IconData icon;
@@ -34,8 +33,8 @@ class FeatureCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(icon, color: Colors.black),
-              Space(vertical: 8),
-              Text(title, style: TextAppTheme.h5()),
+              Spacer(),
+              Text(title, style: TextAppTheme.h5(color: Colors.black)),
             ],
           ),
         ),

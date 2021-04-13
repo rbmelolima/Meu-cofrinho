@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:meu_cofrinho/ui/routes/routes.dart';
 
 import 'feature_card.dart';
 
@@ -20,7 +22,7 @@ class FeaturesListApp extends StatelessWidget {
         FeatureCard(
           title: "Contar moedinhas",
           icon: Icons.monetization_on_outlined,
-          navigate: () => {},
+          navigate: () => Get.toNamed(Routes.coinCounter),
         ),
         FeatureCard(
           title: "Contar notas",
