@@ -1,6 +1,7 @@
 abstract class CoinCounterPresenter {
   String getFormattedTotalValue();
   Map<String, String> getInformationAboutMoney();
+  void clean();
 
   Stream<int> get cents05quantity;
   Stream<int> get cents10quantity;

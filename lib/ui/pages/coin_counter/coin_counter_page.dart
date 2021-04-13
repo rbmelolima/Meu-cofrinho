@@ -18,6 +18,7 @@ class CoinCounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _scaffoldKey = GlobalKey<ScaffoldState>();
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -31,7 +32,7 @@ class CoinCounterPage extends StatelessWidget {
         child: LimitedWidth(
           max: Breakpoints.maxWidth,
           child: ListView(
-            padding: EdgeInsets.all(12),
+            padding: UtilsAppTheme.paddingApp(),
             children: [
               MoneyCard(
                 pathImageAsset: _baseImagePath + '/5-cent.png',
@@ -65,41 +66,54 @@ class CoinCounterPage extends StatelessWidget {
               ),
               Space(vertical: 32),
               ElevatedButton(
+                child: Text('Calcular'),
                 onPressed: () {
+                  var informations = presenter.getInformationAboutMoney();
+
                   showModalBottomSheet(
                     context: context,
                     builder: (_) => SizedBox(
-                      height: 200,
+                      height: 350,
                       width: double.maxFinite,
                       child: Container(
-                        padding: EdgeInsets.all(16),
-                        child: Center(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                presenter.getFormattedTotalValue(),
-                                style: TextAppTheme.h3(color: Colors.black),
-                              ),
-                              Space(vertical: 8),
-                              TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "+ INFORMAÇÕES",
-                                  style: TextStyle(
-                                    color: ColorAppTheme.accentColor,
-                                    fontSize: 16,
-                                  ),
+                        padding: EdgeInsets.symmetric(vertical: 32, horizontal: 12),
+                        child: Column(
+                          children: [
+                            Space(vertical: 12),
+                            Text(
+                              presenter.getFormattedTotalValue(),
+                              style: TextAppTheme.h3(color: Colors.black),
+                            ),
+                            Space(vertical: 48),
+                            for (var item in informations.entries) ...[
+                              Container(
+                                margin: EdgeInsets.only(bottom: 16),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      item.key,
+                                      style: TextAppTheme.p(color: Colors.black, size: 14),
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      item.value,
+                                      style: TextAppTheme.strong(color: Colors.black, size: 14),
+                                    ),
+                                  ],
                                 ),
                               )
-                            ],
-                          ),
+                            ]
+                          ],
                         ),
                       ),
                     ),
                   );
                 },
-                child: Text('Calcular'),
+              ),
+              Space(vertical: 16),
+              OutlinedButton(
+                child: Text("Limpar tudo"),
+                onPressed: presenter.clean,
               )
             ],
           ),

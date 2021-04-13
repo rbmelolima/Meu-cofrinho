@@ -30,6 +30,7 @@ class AppTheme {
       inputDecorationTheme: _inputStyles(),
       buttonTheme: _buttonStyles(),
       elevatedButtonTheme: _elevatedButtonStyle(),
+      outlinedButtonTheme: _outlinedButtonTheme(),
     );
   }
 
@@ -78,6 +79,21 @@ class AppTheme {
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
         onPrimary: Colors.white,
         primary: ColorAppTheme.buttonColor,
+        shape: UtilsAppTheme.roundedButton(),
+        elevation: 0,
+      ),
+    );
+  }
+
+  static OutlinedButtonThemeData _outlinedButtonTheme() {
+    return OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+        textStyle: TextAppTheme.strong(size: 18, color: Colors.white),
+        elevation: 0,
+        onSurface: Colors.white,
+        primary: Colors.white,
+        side: BorderSide(width: 2, color: Colors.white),
         shape: UtilsAppTheme.roundedButton(),
       ),
     );

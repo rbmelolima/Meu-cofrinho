@@ -67,4 +67,12 @@ class GetxCoinCounterPresenter implements CoinCounterPresenter {
       ),
     };
   }
+
+  void clean() {
+    _cents05quantity.value = 0;
+    _cents10quantity.value = 0;
+    _cents25quantity.value = 0;
+    _cents50quantity.value = 0;
+    _real01quantity.value = 0;
+  }
 }
