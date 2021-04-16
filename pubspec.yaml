@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get:
   lottie: ^1.0.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -26,5 +27,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/ui/assets/images/
+    - lib/ui/assets/images/moedas/
+    - lib/ui/assets/images/notas/
     - lib/ui/assets/lottie/

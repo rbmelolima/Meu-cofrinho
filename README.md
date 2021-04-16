@@ -1,16 +1,38 @@
-# meu_cofrinho
+# 🐷 Meu cofrinho
 
-A new Flutter project.
+## 💡 Concepão da ideia
+Eu sou um grande economizador de dinheiro, e uma dos meus hábitos é guardar moedas em um cofrinho. Só que hoje ele tem bastante moedas e pensei em quais aplicações eu poderia desenvolver utilizando essa temática
 
-## Getting Started
+## 🎀 Design
+Este design foi feito por mim, utilizando o Figma. [Você pode acessá-lo aqui](https://www.figma.com/file/6j8upUTV1UEux6EBhhbHFk/Meu-cofrinho?node-id=1%3A3).
 
-This project is a starting point for a Flutter application.
+A animação do porquinho eu busquei lá do Lottie, [você pode acessá-lo aqui](https://lottiefiles.com/53775-saving-energy-saving-money) (à César o que é de César, não é mesmo?).
 
-A few resources to get you started if this is your first Flutter project:
+## 🔨 Instalação do projeto
+Certifique-se de ter o flutter e o Git instalado :P
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```bash
+# Clone este repositório
+$ https://github.com/rbmelolima/Meu_cofrinho
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Entre na pasta 
+$ cd Meu_cofrinho
+
+# Baixe todas dependências de desenvolvimento
+$ flutter pub get
+
+# Inicie a aplicação (Web ou mobile, tanto faz)
+$ flutter run
+```
+
+## 🎯 Features
+- [x] Contador de moedas
+- [ ] Contador de notas
+- [ ] Criar e excluir cofrinhos pessoais
+- [ ] Inserir e remover dinheiro de cofrinho
+- [ ] Criação de metas de poupança
+
+#### 🚧 O que é interessante ter?
+- [ ] Notificação das metas
+- [ ] Notificação dos cofrinhos
+- [ ] Modo noturno

@@ -9,7 +9,7 @@ class TextAppTheme {
     );
   }
 
-  static h1({Color color = Colors.black}) {
+  static h1({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontWeight: FontWeight.w900,
@@ -17,7 +17,7 @@ class TextAppTheme {
     );
   }
 
-  static h2({Color color = Colors.black}) {
+  static h2({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontWeight: FontWeight.bold,
@@ -25,7 +25,7 @@ class TextAppTheme {
     );
   }
 
-  static h3({Color color = Colors.black}) {
+  static h3({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontWeight: FontWeight.bold,
@@ -33,7 +33,7 @@ class TextAppTheme {
     );
   }
 
-  static h4({Color color = Colors.black}) {
+  static h4({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class TextAppTheme {
     );
   }
 
-  static h5({Color color = Colors.black}) {
+  static h5({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class TextAppTheme {
     );
   }
 
-  static strong({Color color = Colors.black, double size = 16}) {
+  static strong({Color color = Colors.white, double size = 16}) {
     return TextStyle(
       fontWeight: FontWeight.bold,
       color: color,
@@ -57,7 +57,7 @@ class TextAppTheme {
     );
   }
 
-  static superStrong({Color color = Colors.black, double size = 16}) {
+  static superStrong({Color color = Colors.white, double size = 16}) {
     return TextStyle(
       fontWeight: FontWeight.w900,
       color: color,
@@ -65,11 +65,15 @@ class TextAppTheme {
     );
   }
 
-  static p({Color color = Colors.black, double size = 16}) {
+  static p({Color color = Colors.white, double size = 16}) {
     return TextStyle(
       fontWeight: FontWeight.normal,
       color: color,
       fontSize: size,
     );
+  }
+
+  static appBarTitle() {
+    return TextStyle(color: Colors.white);
   }
 }

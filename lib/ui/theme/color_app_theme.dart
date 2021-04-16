@@ -7,7 +7,7 @@ class ColorAppTheme {
   static Color accentColor = Color(0xFF24A3A1);
 
   static Color backgroundColor = Color(0xFF24A3A1);
-  static Color buttonColor = Color(0xFFFF9394);
+  static Color buttonColor = Color(0xFFFF7273);
 
   static Color successColor = Colors.green;
   static Color errorColor = Colors.red[800];

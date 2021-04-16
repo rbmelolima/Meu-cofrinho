@@ -17,8 +17,11 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         color: ColorAppTheme.backgroundColor,
         foregroundColor: Colors.white,
+        titleTextStyle: TextStyle(color: Colors.white),
+        toolbarTextStyle: TextStyle(color: Colors.white),
         actionsIconTheme: IconThemeData(color: Colors.white),
         iconTheme: IconThemeData(color: Colors.white),
+        centerTitle: true,
       ),
       scaffoldBackgroundColor: ColorAppTheme.backgroundColor,
       fontFamily: 'Roboto',
@@ -27,6 +30,7 @@ class AppTheme {
       inputDecorationTheme: _inputStyles(),
       buttonTheme: _buttonStyles(),
       elevatedButtonTheme: _elevatedButtonStyle(),
+      outlinedButtonTheme: _outlinedButtonTheme(),
     );
   }
 
@@ -45,7 +49,10 @@ class AppTheme {
 
   static InputDecorationTheme _inputStyles() {
     return InputDecorationTheme(
-      border: OutlineInputBorder(borderSide: BorderSide()),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(width: 0, style: BorderStyle.none),
+      ),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: Colors.grey[200], width: 1),
       ),
@@ -57,9 +64,7 @@ class AppTheme {
 
   static ButtonThemeData _buttonStyles() {
     return ButtonThemeData(
-      colorScheme: ColorScheme.light(
-        primary: ColorAppTheme.buttonColor,
-      ),
+      colorScheme: ColorScheme.light(primary: ColorAppTheme.buttonColor),
       buttonColor: ColorAppTheme.buttonColor,
       splashColor: ColorAppTheme.buttonColor,
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
@@ -72,6 +77,23 @@ class AppTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+        onPrimary: Colors.white,
+        primary: ColorAppTheme.buttonColor,
+        shape: UtilsAppTheme.roundedButton(),
+        elevation: 0,
+      ),
+    );
+  }
+
+  static OutlinedButtonThemeData _outlinedButtonTheme() {
+    return OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8),
+        textStyle: TextAppTheme.strong(size: 18, color: Colors.white),
+        elevation: 0,
+        onSurface: Colors.white,
+        primary: Colors.white,
+        side: BorderSide(width: 2, color: Colors.white),
         shape: UtilsAppTheme.roundedButton(),
       ),
     );
