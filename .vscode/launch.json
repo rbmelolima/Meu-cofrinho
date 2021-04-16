@@ -5,6 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Testes",
+      "type": "dart",
+      "request": "launch",
+      "program": "./test/"
+    },
+    {
       "name": "Iniciar",
       "request": "launch",
       "type": "dart"

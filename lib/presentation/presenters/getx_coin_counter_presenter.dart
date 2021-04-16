@@ -18,28 +18,32 @@ class GetxCoinCounterPresenter implements CoinCounterPresenter {
   Stream<int> get cents50quantity => _cents50quantity.stream;
   Stream<int> get real01quantity => _real01quantity.stream;
 
-  int returnQuantity(int value, int add) {
-    return value + add < 0 ? 0 : value + add;
+  int returnQuantity(int value, int add, bool clean) {
+    if (clean) {
+      return add;
+    } else {
+      return value + add < 0 ? 0 : value + add;
+    }
   }
 
-  void handleCents05quantity(int quantity) {
-    _cents05quantity.value = returnQuantity(_cents05quantity.value, quantity);
+  void handleCents05quantity(int quantity, {bool clean = false}) {
+    _cents05quantity.value = returnQuantity(_cents05quantity.value, quantity, clean);
   }
 
-  void handleCents10quantity(int quantity) {
-    _cents10quantity.value = returnQuantity(_cents10quantity.value, quantity);
+  void handleCents10quantity(int quantity, {bool clean = false}) {
+    _cents10quantity.value = returnQuantity(_cents10quantity.value, quantity, clean);
   }
 
-  void handleCents25quantity(int quantity) {
-    _cents25quantity.value = returnQuantity(_cents25quantity.value, quantity);
+  void handleCents25quantity(int quantity, {bool clean = false}) {
+    _cents25quantity.value = returnQuantity(_cents25quantity.value, quantity, clean);
   }
 
-  void handleCents50quantity(int quantity) {
-    _cents50quantity.value = returnQuantity(_cents50quantity.value, quantity);
+  void handleCents50quantity(int quantity, {bool clean = false}) {
+    _cents50quantity.value = returnQuantity(_cents50quantity.value, quantity, clean);
   }
 
-  void handleReal01quantity(int quantity) {
-    _real01quantity.value = returnQuantity(_real01quantity.value, quantity);
+  void handleReal01quantity(int quantity, {bool clean = false}) {
+    _real01quantity.value = returnQuantity(_real01quantity.value, quantity, clean);
   }
 
   String getFormattedTotalValue() {

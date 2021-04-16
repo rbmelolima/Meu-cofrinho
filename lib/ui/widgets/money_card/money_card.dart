@@ -6,7 +6,7 @@ import '../widgets.dart';
 class MoneyCard extends StatefulWidget {
   final String pathImageAsset;
   final String description;
-  final Function handleValue;
+  final Function(int quantity, {bool clean}) handleValue;
   final Stream<int> quantity;
 
   const MoneyCard({
@@ -61,7 +61,6 @@ class _MoneyCardState extends State<MoneyCard> {
                       stream: widget.quantity,
                       initialData: 0,
                       builder: (context, snapshot) {
-                        var actualValue = snapshot.data;
                         controller.text = snapshot.data.toString();
                         return SizedBox(
                           height: 40,
@@ -71,18 +70,17 @@ class _MoneyCardState extends State<MoneyCard> {
                               controller: controller,
                               keyboardType: TextInputType.number,
                               cursorColor: ColorAppTheme.accentColor,
-                              textAlign: TextAlign.center,
                               textAlignVertical: TextAlignVertical.center,
+                              textAlign: TextAlign.center,
+                              textInputAction: TextInputAction.done,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(8),
                                 filled: true,
                                 fillColor: Colors.white,
                               ),
-                              onChanged: (value) {
-                                //TODO: Corrigir comportamento estranho dos inputs
-                                widget.handleValue(-(actualValue));
+                              onSubmitted: (value) {
                                 if (value != null && value != '' && int.tryParse(value) >= 0) {
-                                  widget.handleValue(int.parse(value));
+                                  widget.handleValue(int.parse(value), clean: true);
                                 }
                               },
                             ),

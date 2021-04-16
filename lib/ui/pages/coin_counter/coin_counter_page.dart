@@ -73,37 +73,38 @@ class CoinCounterPage extends StatelessWidget {
                   showModalBottomSheet(
                     context: context,
                     builder: (_) => SizedBox(
-                      height: 350,
                       width: double.maxFinite,
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 32, horizontal: 12),
-                        child: Column(
-                          children: [
-                            Space(vertical: 12),
-                            Text(
-                              presenter.getFormattedTotalValue(),
-                              style: TextAppTheme.h3(color: Colors.black),
-                            ),
-                            Space(vertical: 48),
-                            for (var item in informations.entries) ...[
-                              Container(
-                                margin: EdgeInsets.only(bottom: 16),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      item.key,
-                                      style: TextAppTheme.p(color: Colors.black, size: 14),
-                                    ),
-                                    Spacer(),
-                                    Text(
-                                      item.value,
-                                      style: TextAppTheme.strong(color: Colors.black, size: 14),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ]
-                          ],
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Space(vertical: 12),
+                              Text(
+                                presenter.getFormattedTotalValue(),
+                                style: TextAppTheme.h3(color: Colors.black),
+                              ),
+                              Space(vertical: 48),
+                              for (var item in informations.entries) ...[
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 16),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        item.key,
+                                        style: TextAppTheme.p(color: Colors.black, size: 14),
+                                      ),
+                                      Spacer(),
+                                      Text(
+                                        item.value,
+                                        style: TextAppTheme.strong(color: Colors.black, size: 14),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ]
+                            ],
+                          ),
                         ),
                       ),
                     ),
