@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:meu_cofrinho/ui/theme/theme.dart';
 
 class FeatureCard extends StatelessWidget {
@@ -32,7 +33,7 @@ class FeatureCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, color: Colors.black),
+              FaIcon(icon, color: Colors.black),
               Spacer(),
               Text(title, style: TextAppTheme.h5(color: Colors.black)),
             ],

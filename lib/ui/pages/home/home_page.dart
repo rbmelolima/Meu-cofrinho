@@ -11,7 +11,29 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(elevation: 0, backgroundColor: ColorAppTheme.backgroundColor),
       backgroundColor: ColorAppTheme.backgroundColor,
-      drawer: Drawer(),
+      drawer: Drawer(
+        semanticLabel: "Menu",
+        child: Container(
+          color: ColorAppTheme.primaryColor,
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Meu cofrinho",
+                      style: TextAppTheme.h3(),
+                    ),
+                    Text("Versão 1.0.0")
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
       body: Center(
         child: LimitedWidth(
           max: Breakpoints.maxWidth,
