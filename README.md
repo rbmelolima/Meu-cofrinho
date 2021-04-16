@@ -27,7 +27,7 @@ $ flutter run
 
 ## 🎯 Features
 - [x] Contador de moedas
-- [ ] Contador de notas
+- [x] Contador de notas
 - [ ] Criar e excluir cofrinhos pessoais
 - [ ] Inserir e remover dinheiro de cofrinho
 - [ ] Criação de metas de poupança
