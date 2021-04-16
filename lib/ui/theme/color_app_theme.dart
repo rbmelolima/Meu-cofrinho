@@ -17,3 +17,7 @@ class ColorAppTheme {
   static Color textColor1 = Color(0xFFFFFFFF);
   static Color textColor2 = Color(0xFFCECECE);
 }
+
+class ColorAppThemeDark {
+  static Color backgroundColor = Color(0xFF212121);
+}

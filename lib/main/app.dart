@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
       title: 'Meu cofrinho',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme(),
+      darkTheme: AppTheme.darkTheme(),
       initialRoute: Routes.home,
       unknownRoute: Routes.unknownRoute(),
       getPages: Routes.allRoutes(),
