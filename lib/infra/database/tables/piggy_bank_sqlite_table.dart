@@ -5,7 +5,6 @@ class PiggyBankSQLITETable {
       'id           TEXT PRIMARY KEY,'
       'date         TEXT NOT NULL,'
       'name         TEXT NOT NULL,'
-      'description  TEXT,'
-      'type         TEXT,'
+      'description  TEXT,'    
       'money        REAL NOT NULL)';
 }

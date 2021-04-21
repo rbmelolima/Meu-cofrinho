@@ -5,8 +5,7 @@ class PiggyBankEntity {
   PiggyBankEntity({
     @required this.id,
     @required this.name,
-    @required this.description,
-    @required this.type,
+    @required this.description,  
     @required this.date,
     @required this.money,
   });
@@ -14,7 +13,6 @@ class PiggyBankEntity {
   final String id;
   final String name;
   final String description;
-  final String type;
   final String date;
   final double money;
 
@@ -25,8 +23,7 @@ class PiggyBankEntity {
   factory PiggyBankEntity.fromMap(Map<String, dynamic> json) => PiggyBankEntity(
         id: json["id"],
         name: json["name"],
-        description: json["description"],
-        type: json["type"],
+        description: json["description"],       
         date: json["date"],
         money: json["money"].toDouble(),
       );
@@ -34,8 +31,7 @@ class PiggyBankEntity {
   Map<String, dynamic> toMap() => {
         "id": id,
         "name": name,
-        "description": description,
-        "type": type,
+        "description": description,       
         "date": date,
         "money": money,
       };
