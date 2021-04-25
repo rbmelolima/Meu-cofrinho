@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:meu_cofrinho/ui/routes/routes.dart';
 
@@ -16,18 +17,18 @@ class FeaturesListApp extends StatelessWidget {
       children: [
         FeatureCard(
           title: "Meu cofrinho",
-          icon: Icons.monetization_on_outlined,
+          icon: FontAwesomeIcons.piggyBank,
           navigate: null,
         ),
         FeatureCard(
           title: "Contar moedinhas",
-          icon: Icons.monetization_on_outlined,
+          icon: FontAwesomeIcons.coins,
           navigate: () => Get.toNamed(Routes.coinCounter),
         ),
         FeatureCard(
           title: "Contar notas",
-          icon: Icons.monetization_on_outlined,
-          navigate: () => {},
+          icon: FontAwesomeIcons.wallet,
+          navigate: () => Get.toNamed(Routes.cashCounter),
         ),
       ],
     );

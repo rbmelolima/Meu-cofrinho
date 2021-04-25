@@ -1,6 +1,6 @@
 # 🐷 Meu cofrinho
 
-## 💡 Concepão da ideia
+## 💡 Concepção da ideia
 Eu sou um grande economizador de dinheiro, e uma dos meus hábitos é guardar moedas em um cofrinho. Só que hoje ele tem bastante moedas e pensei em quais aplicações eu poderia desenvolver utilizando essa temática
 
 ## 🎀 Design
@@ -27,7 +27,7 @@ $ flutter run
 
 ## 🎯 Features
 - [x] Contador de moedas
-- [ ] Contador de notas
+- [x] Contador de notas
 - [ ] Criar e excluir cofrinhos pessoais
 - [ ] Inserir e remover dinheiro de cofrinho
 - [ ] Criação de metas de poupança

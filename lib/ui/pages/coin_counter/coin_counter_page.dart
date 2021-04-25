@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meu_cofrinho/ui/breakpoints/breakpoints.dart';
 import 'package:meu_cofrinho/ui/theme/theme.dart';
 import 'package:meu_cofrinho/ui/widgets/widgets.dart';
+import 'package:meu_cofrinho/utils/is_dark_mode.dart';
 
 import './coin_counter_presenter.dart';
 
@@ -69,46 +70,7 @@ class CoinCounterPage extends StatelessWidget {
                 child: Text('Calcular'),
                 onPressed: () {
                   var informations = presenter.getInformationAboutMoney();
-
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (_) => SizedBox(
-                      width: double.maxFinite,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 32, horizontal: 12),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              Space(vertical: 12),
-                              Text(
-                                presenter.getFormattedTotalValue(),
-                                style: TextAppTheme.h3(color: Colors.black),
-                              ),
-                              Space(vertical: 48),
-                              for (var item in informations.entries) ...[
-                                Container(
-                                  margin: EdgeInsets.only(bottom: 16),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        item.key,
-                                        style: TextAppTheme.p(color: Colors.black, size: 14),
-                                      ),
-                                      Spacer(),
-                                      Text(
-                                        item.value,
-                                        style: TextAppTheme.strong(color: Colors.black, size: 14),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ]
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
+                  showInformation(context, informations);
                 },
               ),
               Space(vertical: 16),
@@ -117,6 +79,52 @@ class CoinCounterPage extends StatelessWidget {
                 onPressed: presenter.clean,
               )
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future showInformation(BuildContext context, Map<String, String> informations) {
+    Color txColor = isDarkMode(context) ? Colors.white : Colors.black;
+    Color bgColor = isDarkMode(context) ? Colors.grey[850] : Colors.white;
+
+    return showModalBottomSheet(
+      context: context,
+      builder: (_) => SizedBox(
+        width: double.maxFinite,
+        child: Container(
+          color: bgColor,
+          padding: EdgeInsets.symmetric(vertical: 32, horizontal: 12),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Space(vertical: 12),
+                Text(
+                  presenter.getFormattedTotalValue(),
+                  style: TextAppTheme.h3(color: txColor),
+                ),
+                Space(vertical: 48),
+                for (var item in informations.entries) ...[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 16),
+                    child: Row(
+                      children: [
+                        Text(
+                          item.key,
+                          style: TextAppTheme.p(color: txColor, size: 14),
+                        ),
+                        Spacer(),
+                        Text(
+                          item.value,
+                          style: TextAppTheme.strong(color: txColor, size: 14),
+                        ),
+                      ],
+                    ),
+                  )
+                ]
+              ],
+            ),
           ),
         ),
       ),
