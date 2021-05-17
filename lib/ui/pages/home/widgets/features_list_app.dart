@@ -18,10 +18,10 @@ class FeaturesListApp extends StatelessWidget {
         FeatureCard(
           title: "Meu cofrinho",
           icon: FontAwesomeIcons.piggyBank,
-          navigate: null,
+          navigate: () => Get.toNamed(Routes.piggyBankList),
         ),
         FeatureCard(
-          title: "Contar moedinhas",
+          title: "Contar moedas",
           icon: FontAwesomeIcons.coins,
           navigate: () => Get.toNamed(Routes.coinCounter),
         ),
