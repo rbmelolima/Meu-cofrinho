@@ -11,7 +11,7 @@ void main() {
     sut = new GetxCoinCounterPresenter(money);
   });
 
-  test('Verificando o funcionamento dos handles de moedas #1', () {
+  test('Funcionamento dos handles de moedas #1', () {
     sut.handleCents05quantity(-15);
     sut.handleCents10quantity(10);
     sut.handleCents25quantity(10);
@@ -25,7 +25,7 @@ void main() {
     sut.real01quantity.listen(((value) => expect(value, 10)));
   });
 
-  test('Verificando o funcionamento dos handles de moedas #2', () {
+  test('Funcionamento dos handles de moedas #2', () {
     sut.handleCents10quantity(10);
     sut.handleCents25quantity(10);
     sut.handleCents50quantity(10);

@@ -54,11 +54,10 @@ void main() {
   setUp(() {
     database = SelectMethodDatabaseSpy();
     sut = LocalGetListPiggyBank(database);
-
     mockDatabaseSuccess();
   });
 
-  test('Verificando se método está funcionando corretamente', () async {
+  test('Verificando se método está retornando uma lista de cofrinhos', () async {
     var res = await sut.getListPiggyBank();
     verify(database.query(PiggyBankSQLITETable.table));
     expect(res.length, 2);
@@ -67,7 +66,6 @@ void main() {
   test('Verificando se método está funcionando corretamente caso ocorra uma exceção', () async {
     mockDatabaseMethod().thenThrow((_) => Exception());
     var res = sut.getListPiggyBank();
-
     expect(res, throwsA(DomainError.selectDatabaseError));
   });
 }

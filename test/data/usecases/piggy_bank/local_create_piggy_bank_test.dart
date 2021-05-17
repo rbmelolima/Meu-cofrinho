@@ -24,8 +24,8 @@ void main() {
     mockDatabaseSuccess();
   });
 
-  test('Verificando se método está funcionando corretamente', () async {
-    var success = await sut.createPiggyBank('meu cofrinho');
+  test('Verificando se método está criando cofrinhos corretamente', () async {
+    var success = await sut.createPiggyBank('meu_cofrinho');
     //O ID do cofrinho é gerado de acordo com o datetime, fica complicado de testar corretamente
     verify(database.insert(PiggyBankSQLITETable.table, any));
     expect(success, true);
@@ -33,7 +33,7 @@ void main() {
 
   test('Verificando se método está funcionando corretamente em casos de exceção', () async {
     mockDatabaseMethod().thenThrow(() => Exception());
-    var success = await sut.createPiggyBank('meu cofrinho');
+    var success = await sut.createPiggyBank('meu_cofrinho');
     expect(success, false);
   });
 }
