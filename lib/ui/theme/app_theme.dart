@@ -10,9 +10,9 @@ class AppTheme {
       primaryColor: ColorAppTheme.primaryColor,
       primaryColorLight: ColorAppTheme.primaryColorLight,
       primaryColorDark: ColorAppTheme.primaryColorDark,
-      accentColor: ColorAppTheme.accentColor,
       errorColor: ColorAppTheme.errorColor,
       backgroundColor: ColorAppTheme.backgroundColor,
+      // ignore: deprecated_member_use
       buttonColor: ColorAppTheme.buttonColor,
       appBarTheme: AppBarTheme(
         color: ColorAppTheme.backgroundColor,
@@ -31,7 +31,7 @@ class AppTheme {
       inputDecorationTheme: _inputStyles(),
       buttonTheme: _buttonStyles(),
       elevatedButtonTheme: _elevatedButtonStyle(),
-      outlinedButtonTheme: _outlinedButtonTheme(),
+      outlinedButtonTheme: _outlinedButtonTheme(), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: ColorAppTheme.accentColor),
     );
   }
 
@@ -40,9 +40,9 @@ class AppTheme {
       primaryColor: ColorAppTheme.primaryColor,
       primaryColorLight: ColorAppTheme.primaryColorLight,
       primaryColorDark: ColorAppTheme.primaryColorDark,
-      accentColor: ColorAppTheme.accentColor,
       errorColor: ColorAppTheme.errorColor,
       backgroundColor: ColorAppThemeDark.backgroundColor,
+      // ignore: deprecated_member_use
       buttonColor: ColorAppTheme.buttonColor,
       appBarTheme: AppBarTheme(
         color: ColorAppThemeDark.backgroundColor,
@@ -61,7 +61,7 @@ class AppTheme {
       inputDecorationTheme: _inputStyles(),
       buttonTheme: _buttonStyles(),
       elevatedButtonTheme: _elevatedButtonStyle(),
-      outlinedButtonTheme: _outlinedButtonTheme(),
+      outlinedButtonTheme: _outlinedButtonTheme(), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: ColorAppTheme.accentColor),
     );
   }
 

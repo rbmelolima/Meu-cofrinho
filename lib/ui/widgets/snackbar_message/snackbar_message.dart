@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:meu_cofrinho/ui/theme/theme.dart';
 
 enum SnackBarMessageType { info, success, error, warning }
